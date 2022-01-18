@@ -77,27 +77,30 @@
 				<th width="50"><p>No</p></th>
 				<th width="200"><p>ID</p></th>
 				<th width="200"><p>PW</p></th>
+				<th width="200"><p>NickName</p></th>
 				<th width="100" id="send"><p>구분</p></th>
 			</tr>
 			<%
 			int no=0;
 			try{
-				String sql = "select userName,Password from login0117";
+				String sql = "select username,password,nickname from member0118";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while(rs.next()){
 					no++;
 					String Username = rs.getString(1);
 					String Password = rs.getString(2);
+					String Nickname = rs.getString(3);
 					%>
 					<tr>
 						<td><%=no%></td>
 						<td><%=Username%></td>
 						<td><%=Password%></td>
+						<td><%=Nickname%></td>
 						<td>
-							<a href="/HRD_0117/signUpdate.jsp?send_Username=<%=Username%>">수정</a> 
+							<a href="/HRD_0117/login/signUpdate.jsp?send_Username=<%=Username%>">수정</a> 
 							<span> | </span>
-							<a href="/HRD_0117/signDelete.jsp?send_Username=<%=Username%>">삭제</a>
+							<a href="/HRD_0117/login/signDelete.jsp?send_Username=<%=Username%>">삭제</a>
 						</td>
 					</tr>
 					<%
@@ -107,7 +110,7 @@
 			}
 			%>
 			<tr>
-				<td colspan="4" id="btntd">
+				<td colspan="5" id="btntd">
 					<button type="button" onclick="signin()">SIGN IN</button>
 				</td>
 			</tr>

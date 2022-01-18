@@ -33,7 +33,7 @@
 			background-color: navy;
 			color: white;
 			font-weight: bold;
-			font-size: 20px;
+			font-size: 10px;
 		}#signIn_table input{
 			height: 50px;
 			width: 440px;
@@ -56,9 +56,10 @@
 		function login() {
 			var id = document.signIn_form.userName;
 			var pw = document.signIn_form.Password;
+			var nn = document.signIn_form.nickName;
 			
-			console.log("id : ",id.value);
-			console.log("pw : ",pw.value);
+			//console.log("id : ",id.value);
+			//console.log("pw : ",pw.value);
 			
 			if(id.value == ""){
 				alert("아이디를 입력하세요.");
@@ -66,6 +67,9 @@
 			}else if(pw.value == ""){
 				alert("패스워드를 입력하세요.");
 				pw.focus();
+			}else if(nn.value == ""){
+				alert("별명을 입력하세요.");
+				nn.focus();
 			}else{
 				document.signIn_form.submit();
 			}
@@ -81,12 +85,16 @@
 		<form name="signIn_form" method="post" action="signIn_process.jsp">
 			<table id="signIn_table">
 				<tr>
-					<th><p>ID</p></th>
+					<th><p>아이디</p></th>
 					<td><input type="text" name="userName" placeholder=" Username"></td>
 				</tr>
 				<tr>
-					<th><p>PW</p></th>
+					<th><p>비밀번호</p></th>
 					<td><input type="password" name="Password" placeholder=" Password"></td>
+				</tr>
+				<tr>
+					<th><p>닉네임</p></th>
+					<td><input type="text" name="nickName" placeholder=" Nickname"></td>
 				</tr>
 				<tr>
 					<td colspan="2" id="btntd">

@@ -14,8 +14,10 @@
 			<li><a href="#">로그인</a></li>
 			<li><a href="/HRD_0117/member0117/member0117_insert.jsp">회원가입</a></li>
 			<li><a href="/HRD_0117/product0117/product0117_insert.jsp">상품등록</a></li>
+			<li><a href="/HRD_0117/order0117/order0117_insert.jsp">주문정보등록</a></li>
 			<li><a href="/HRD_0117/member0117/member0117_select.jsp">회원목록</a></li>
 			<li><a href="/HRD_0117/product0117/product0117_select.jsp">상품목록</a></li>
+			<li><a href="/HRD_0117/order0117/order0117_select.jsp">주문정보목록</a></li>
 			<li><a href="/HRD_0117/index.jsp">홈으로</a></li>
 		</ul>
 	</nav>

@@ -1,3 +1,4 @@
+<%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -75,7 +76,6 @@
 <body>
 	<%@ include file="header.jsp" %>
 	<%@ include file="nav.jsp" %>
-	
 	<section>
 		<h2>Login</h2>
 		<form name="login_form" method="post" action="login_process.jsp">

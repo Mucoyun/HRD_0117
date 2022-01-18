@@ -15,40 +15,42 @@
 		
 		
 		try{
-			String sql = "select userName from login0117 where userName=? ";
+			String sql = "select userName from member0118 where userName=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userName);
 			rs = pstmt.executeQuery();
 			if(rs.next()){//아이디 있음
 				String id = rs.getString(1);
-				sql = "select Password from login0117 where userName=?";
+				sql = "select Password,nickname from member0118 where userName=?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, userName);
 				rs = pstmt.executeQuery();
 				if(rs.next()){//비밀번호 있음.
 					String pw = rs.getString(1);
+					String nn = rs.getString(2);
 					if(Password.equals(pw)){//비밀번호 맞음
 						%><script>
-							alert("로그인 되었습니다.");
-							location.href="/HRD_0117/index.jsp";			
+							var nickname = "<%=nn %>";
+							alert(nickname + " 님 환영합니다.");
+							location.href="/HRD_0117/login/index.jsp";			
 						</script><%
 					}else{
 						//비밀번호 틀림
 						%><script>
 							alert("비밀번호가 틀렸습니다.");
-							location.href="/HRD_0117/login.jsp";			
+							location.href="/HRD_0117/login/login.jsp";			
 						</script><%
 					}
 				}else{//비밀번호 없음
 					%><script>
 						alert("비밀번호가 없습니다.");
-						location.href="/HRD_0117/login.jsp";			
+						location.href="/HRD_0117/login/login.jsp";			
 					</script><%
 				}			
 			}else{//아이디 없음
 				%><script>
 					alert("등록되지 않는 아이디 입니다.");
-					location.href="/HRD_0117/login.jsp";			
+					location.href="/HRD_0117/login/login.jsp";			
 				</script><%
 			}
 		}catch(SQLException e){

@@ -35,7 +35,7 @@
 			display: inline-block;
 			padding: 0 2.5%;
 		}nav ul li:FIRST-CHILD{
-			padding-right:20%; 
+			padding-right:10%; 
 		}nav ul li a{
 			text-decoration: none;
 			color: white;

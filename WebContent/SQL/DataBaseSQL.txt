@@ -27,3 +27,22 @@ create table product0117(
 ); 
 
 
+create table order0117(
+	orderDate date,
+	orderName varchar2(20),
+	productId varchar2(20) not null,
+	unitprice number(11) not null,
+	orderQty number(11) not null,
+	orderAddress varchar(45) not null,
+	primary key(orderDate,orderName)
+);
+
+
+select
+	a.orderDate,a.orderName,a.productId,b.name,a.unitprice,a.orderQty,(a.unitprice*a.orderQty),a.orderAddress
+from
+	order0117 a, product0117 b
+where
+	a.productId=b.productId
+;
+

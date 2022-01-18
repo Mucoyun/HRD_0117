@@ -61,7 +61,7 @@
 			</tr>
 			<%
 			try{
-				String sql = "select id,name,password,gender,birth,mail,phone,address,to_char(timestamp,'yyyy-mm-dd') from member0117";
+				String sql = "select id,name,password,gender,birth,mail,phone,address,to_char(timestamp,'yyyy-mm-dd') from member0117 order by id asc";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while(rs.next()){

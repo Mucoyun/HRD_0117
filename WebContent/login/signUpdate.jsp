@@ -33,7 +33,7 @@
 			background-color: navy;
 			color: white;
 			font-weight: bold;
-			font-size: 20px;
+			font-size: 10px;
 		}#signUp_table input{
 			height: 50px;
 			width: 440px;
@@ -56,6 +56,7 @@
 		function login() {
 			var id = document.signUp_form.userName;
 			var pw = document.signUp_form.Password;
+			var nn = document.signUp_form.nickName;
 			
 			console.log("id : ",id.value);
 			console.log("pw : ",pw.value);
@@ -66,6 +67,9 @@
 			}else if(pw.value == ""){
 				alert("패스워드를 입력하세요.");
 				pw.focus();
+			}else if(nn.value == ""){
+				alert("별명을 입력하세요.");
+				nn.focus();
 			}else{
 				document.signUp_form.submit();
 			}
@@ -84,12 +88,16 @@
 		<form name="signUp_form" method="post" action="signUp_process.jsp">
 			<table id="signUp_table">
 				<tr>
-					<th><p>ID</p></th>
+					<th><p>아아디</p></th>
 					<td><input type="text" name="userName" value="<%= %>" readonly></td>
 				</tr>
 				<tr>
-					<th><p>PW</p></th>
+					<th><p>비밀번호</p></th>
 					<td><input type="password" name="Password"  value="<%= %>"></td>
+				</tr>
+				<tr>
+					<th><p>닉네임</p></th>
+					<td><input type="text" name="nickName" value="<%= %>"></td>
 				</tr>
 				<tr>
 					<td colspan="2" id="btntd">
