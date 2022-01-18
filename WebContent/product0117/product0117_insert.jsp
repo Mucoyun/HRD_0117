@@ -80,7 +80,7 @@
 	<%@ include file="/header.jsp" %>
 	<%@ include file="/nav.jsp" %>
 	<section>
-		<h2>회원 가입 등록 화면</h2><hr>
+		<h2>상품 정보 등록 화면</h2><hr>
 		<form name="p_i_form" method="post" action="product0117_insert_process.jsp">
 			<table id="p_iu_table">
 				<tr>

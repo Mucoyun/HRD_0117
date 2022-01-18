@@ -36,8 +36,8 @@
 			String sql = "insert into member0117 values(?,?,?,?,?,?,?,?,current_timestamp)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			pstmt.setString(2, name);
-			pstmt.setString(3, password);
+			pstmt.setString(2, password);
+			pstmt.setString(3, name);
 			pstmt.setString(4, gender);
 			pstmt.setString(5, birth);
 			pstmt.setString(6, mail);
