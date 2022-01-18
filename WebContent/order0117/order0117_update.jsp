@@ -86,9 +86,10 @@
 		String unitprice = "0";
 		
 		int unitslnstock = 0;
+		int getorderQty = 0;
 		
 		try{
-			String sql = "select to_char(a.orderDate,'yyyy-mm-dd'),a.orderName,a.productId,b.name,a.unitprice,a.orderQty,a.orderAddress,b.unitslnstock from order0117 a, product0117 b where a.productId=b.productId";
+			String sql = "select to_char(a.orderDate,'yyyy-mm-dd'),a.orderName,a.productId,b.name,a.unitprice,a.orderQty,a.orderAddress,b.unitslnstock from order0117 a, product0117 b where a.productId=b.productId and a.orderName=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, send_orderName);
 			rs = pstmt.executeQuery();
@@ -98,7 +99,7 @@
 				productId = rs.getString(3);
 				name = rs.getString(4);
 				unitprice = rs.getString(5);
-				orderQty = rs.getString(6);
+				getorderQty = rs.getInt(6);
 				orderAddress = rs.getString(7);
 				unitslnstock = rs.getInt(8);
 			}else{
@@ -110,14 +111,18 @@
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
+		if(orderQty==null){orderQty=Integer.toString(getorderQty);}
 		
 		int Unitprice = Integer.parseInt(unitprice);
 		int OrderQty = Integer.parseInt(orderQty);
 		
+		if(OrderQty==getorderQty){
+			OrderQty = getorderQty;
+		}
 		if(OrderQty<0){
 			OrderQty = 0;
-		}else if(OrderQty>unitslnstock+OrderQty){
-			OrderQty = unitslnstock;
+		}else if(OrderQty>unitslnstock+getorderQty){
+			OrderQty = unitslnstock+getorderQty;
 			%><script>
 				alert("등록된 재고수를 초과했습니다.");
 				codeselect();
@@ -127,8 +132,8 @@
 		int orderUnitprice = Unitprice * OrderQty;
 	%>
 	<section>
-		<h2>주문 정보 등록 화면</h2><hr>
-		<form name="o_u_form" method="post" action="order0117_update.jsp">
+		<h2>주문 정보 변경 화면</h2><hr>
+		<form name="o_u_form" method="post" action="order0117_update.jsp?send_orderName=<%=orderName%>">
 			<table id="o_iu_table">
 				<tr>
 					<th>주문일자</th>

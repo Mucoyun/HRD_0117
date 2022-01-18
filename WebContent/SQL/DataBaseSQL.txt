@@ -37,6 +37,14 @@ create table order0117(
 	primary key(orderDate,orderName)
 );
 
+column orderDate format a10;
+column orderName format a10;
+column productId format a10;
+column unitprice format 9999999999;
+column orderQty format 9999999999;
+column orderAddress format a10;
+column name format a10;
+
 
 select
 	a.orderDate,a.orderName,a.productId,b.name,a.unitprice,a.orderQty,(a.unitprice*a.orderQty),a.orderAddress
@@ -45,4 +53,14 @@ from
 where
 	a.productId=b.productId
 ;
+
+select
+	a.orderDate,a.orderName,a.productId,b.name,a.unitprice,a.orderQty,a.orderAddress,b.unitslnstock
+from
+	order0117 a, product0117 b
+where
+	a.productId=b.productId and a.orderName=1111;
+
+
+
 

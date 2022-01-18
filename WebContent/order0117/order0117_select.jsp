@@ -89,7 +89,7 @@
 						<td>
 							<a href="/HRD_0117/order0117/order0117_update.jsp?send_orderName=<%=orderName%>">수정</a>
 							<span> | </span>
-							<a href="/HRD_0117/order0117/order0117_delete.jsp?send_orderName=<%=orderName%>"
+							<a href="/HRD_0117/order0117/order0117_delete.jsp?send_orderName=<%=orderName%>&send_productId=<%=productId%>"
 							onclick="if(!confirm('정말로 삭제하시겠습니까?')){
 								return false;
 							}">삭제</a>
