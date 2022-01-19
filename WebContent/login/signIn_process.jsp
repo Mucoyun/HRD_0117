@@ -11,9 +11,9 @@
 		String Password = request.getParameter("Password");
 		String nickName = request.getParameter("nickName");
 		
-		System.out.print("id : "+userName);
+		/* System.out.print("id : "+userName);
 		System.out.print("   pw : "+Password);
-		System.out.println("   nn : "+nickName);
+		System.out.println("   nn : "+nickName); */
 		
 		
 		try{
@@ -30,12 +30,12 @@
 				sql = "insert into member0118 values(?,?,?)";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, userName);
-				pstmt.setString(2, userName);
+				pstmt.setString(2, Password);
 				pstmt.setString(3, nickName);
 				pstmt.executeUpdate();
 				%><script>
 					alert("회원가입 되었습니다.");
-					location.href="/HRD_0117/login/index.jsp";			
+					location.href="/HRD_0117/login/signList.jsp";			
 				</script><%
 			}
 		}catch(SQLException e){

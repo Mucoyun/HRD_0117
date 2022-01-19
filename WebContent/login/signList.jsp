@@ -62,7 +62,7 @@
 	</style>
 	<script>
 		function signin() {
-			location.href = "/HRD_0117/signIn.jsp";
+			location.href = "/HRD_0117/login/signIn.jsp";
 		}
 	</script>
 </head>

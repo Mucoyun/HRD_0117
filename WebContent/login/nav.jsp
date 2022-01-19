@@ -12,6 +12,7 @@
 			<li><a href="/HRD_0117/login/login.jsp">로그인</a></li>
 			<li><a href="/HRD_0117/login/signIn.jsp">회원가입</a></li>
 			<li><a href="/HRD_0117/login/signList.jsp">회원목록</a></li>
+			<li><a href="/HRD_0117/login/board.jsp">게시판</a></li>
 			<li><a href="/HRD_0117/login/index.jsp">홈으로</a></li>
 		</ul>
 	</nav>
