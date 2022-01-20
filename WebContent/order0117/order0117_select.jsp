@@ -17,6 +17,11 @@
 		}#o_s_table a:HOVER {
 			color: red;
 			font-weight: bold;
+		}table{
+			border: 3px solid black;
+			margin: 0 auto;
+		}tr,td,th{
+			border: 1px solid black;
 		}
 	</style>
 </head>

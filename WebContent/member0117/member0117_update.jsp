@@ -56,7 +56,7 @@
 	</script>
 </head>
 <body>
-	<%@ include file="/DBConn.jsp" %>
+	<%@ include file="/DBConn.jsp" %>	
 	<%@ include file="/header.jsp" %>
 	<%@ include file="/nav.jsp" %>
 	<%

@@ -54,6 +54,7 @@
 	</script>
 </head>
 <body>
+	<%@ include file="/loginchecks.jsp" %>
 	<%@ include file="/header.jsp" %>
 	<%@ include file="/nav.jsp" %>
 	<section>

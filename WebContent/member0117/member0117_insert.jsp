@@ -8,6 +8,11 @@
 	<style>
 		#m_iu_table #mail2{
 			background-color: lightgray;
+		}table{
+			border: 3px solid black;
+			margin: 0 auto;
+		}tr,td,th{
+			border: 1px solid black;
 		}
 	</style>
 	<script>
